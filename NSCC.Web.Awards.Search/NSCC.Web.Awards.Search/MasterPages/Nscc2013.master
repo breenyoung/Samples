@@ -1,0 +1,99 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="NSCC.Web.Public.MasterPage.MasterPages.Nscc2013" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Nova Scotia Community College - Page Title</title>
+    
+	<!-- #include virtual="/inc/meta.html" -->
+	<!-- #include virtual="/inc/css.html" -->
+    
+    <script type="text/javascript">
+
+        function getFormId()
+        {
+            return "<%= this.form1.UniqueID %>";
+
+        }
+
+        function getContainerId()
+        {
+            return "<%= Body.UniqueID %>" + "$";
+        }
+    </script>
+        
+	<script type="text/javascript" src="/inc/js/PrintFriendly.js"></script>
+    <asp:ContentPlaceHolder ID="HeadTag" runat="server">
+    </asp:ContentPlaceHolder>
+    
+</head>
+<body>
+	<!-- global container start -->
+    <div id="globalContainer">
+	<asp:ContentPlaceHolder ID="GlobalContainer" runat="server">
+            
+	</asp:ContentPlaceHolder>		
+
+	<!-- utility container start -->
+	<!-- #include virtual="/inc/utility.html" -->
+	<!-- utility container end -->
+		<!-- page container start -->
+		<div id="pageContainer">
+
+<!-- page header start -->
+<!-- #include virtual="/inc/header.html" -->
+<!-- page header end -->
+
+
+<!-- content container start -->
+        <div id="contentContainer">            
+<div id="cookieWidget">
+	    	<div id="cookietrail"><asp:ContentPlaceHolder id="CookieTrail" runat="server"></asp:ContentPlaceHolder></div>
+			<!-- Tools Widget -->
+			<!-- #include virtual="/inc/ToolsWidget.html" -->
+			<!-- End Tools Widget -->
+
+	    	<br class="clear-r" />
+</div>
+            <!-- side navigation start -->
+            <div id="SideNav">
+<asp:ContentPlaceHolder id="SideNav" runat="server"></asp:ContentPlaceHolder>
+            </div>                
+            <!-- side navigation end -->
+<form id="form1" runat="server">
+<!-- Content -->
+            <div id="content">
+
+
+<!-- Tools Widget -->
+
+<!-- End Tools Widget -->
+
+                <asp:ContentPlaceHolder id="Body" runat="server"></asp:ContentPlaceHolder>
+
+<asp:ContentPlaceHolder id="RatingWidget" runat="server"></asp:ContentPlaceHolder>
+        <div class="clear"></div>
+			</div>
+			<!-- main page content end -->
+
+<!-- page footer and end start -->
+<!-- #include virtual="/inc/footer.html" -->
+<!-- page footer and end end -->
+
+            <asp:ContentPlaceHolder ID="HiddenElements" runat="server"></asp:ContentPlaceHolder>
+		</div>
+        </form>
+	<!-- page container end -->
+	</div>
+	<div id="btmContainer"></div>
+</div>
+	<!-- global container end -->
+
+<!-- page footer and end start -->
+<!-- #include virtual="/inc/js.html" -->
+<!-- page footer and end end -->
+
+</body>
+</html>
+

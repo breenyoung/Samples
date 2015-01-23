@@ -1,0 +1,80 @@
+<script type="text/javascript" src="/inc/js/jquery.cookies.2.2.0.min.js"></script>
+<script type="text/javascript" src="/inc/js/nscc.favorites.js"></script>
+<!--<script type="text/javascript" src="/inc/js/EmailPage.js"></script>-->
+<!-- Print Pop up and Style Change -->
+<script type="text/javascript">
+function printstyle(url)
+{
+newwindow=window.open(url,"name","height=600,width=800,resizable=yes,scrollbars=yes,toolbar=yes,menubar=yes,status=1");
+}
+</script>
+<script type="text/javascript" src="/inc/js/PrintFriendly.js"></script>
+
+<script type="text/javascript">
+$(function(){
+
+//console.log($("#topmenu li").children("a.selected").next());
+//$("#topmenu ul li a.selected").next().css("display", "inline");
+$("#topmenu li").children("a.selected").next().show();
+
+$("#topmenu li").hover(
+
+    function() 
+    {
+    	//console.log("hover in");    
+
+    	var currentSelected = $(this).siblings().children("a.selected").next();
+    	var hoveredOver = $(this).children("a");
+
+    	//var arrowSpan = $(this).children("a").next();
+		//console.log(currentSelected);
+    	currentSelected.css("z-index", "90");
+    	currentSelected.hide();
+
+    	if(hoveredOver.hasClass("selected")) { hoveredOver.next().css("z-index", "110"); }
+    	hoveredOver.next().show();
+    },
+    function () 
+    {
+    	//console.log("hover out");
+    	//$(this).siblings().children("a.selected").next().css("z-index", "110")
+    	//console.log($(this).children("a").hasClass("selected"));
+
+		var arrowSpans = $(this).siblings().children("a.selected").next();
+    	var selectedItem = $(this).children("a");
+
+    	arrowSpans.css("z-index", "90");
+    	arrowSpans.show();
+
+    	if(!selectedItem.hasClass("selected"))
+    	{
+    		//console.log("Hide arrow");
+    		//console.log($(this).children("a").next());
+        	selectedItem.next().hide();
+        	$(this).children("a.selected").next().css("z-index", "90");
+    	}
+
+		//$(this).children("a.selected").next().css("z-index", "90");
+    	
+    }
+);
+
+
+
+$("#home-nav li").hover(
+    function() 
+    {
+        $(this).children('.home-nav-sub').show();
+    },
+    function () 
+    {
+        $(this).children('.home-nav-sub').hide();
+    }
+);
+
+
+
+
+});
+</script>
+

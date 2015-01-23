@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NSCC.Web.Awards.DataAccess.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="NSCC_Web_Awards_DataAccess_Service1_CurrentPrograms" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.nscc.ca/Apps/Nscc.CurrentPrograms/CurrentPrograms.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

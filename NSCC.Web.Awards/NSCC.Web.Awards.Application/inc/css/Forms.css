@@ -1,0 +1,78 @@
+label { display: inline-block; }
+
+.reqnote { color: #ff0000; }
+
+/* Override normal body content list padding */
+/* #content ul { margin: 0px; padding: 0px; } */
+
+#content table { width: 530px; }
+
+table td { vertical-align: top; padding: 3px 0; }
+
+.tblHdr { background-color: #c7d9e7; font-weight: bold; border-bottom: 1px solid #fff; }
+
+.tblHdr td { border-bottom: 1px solid #fff; padding: 5px 4px 5px 10px; }
+
+.fldLabel { background-color: #d3e0e9; border-bottom: 1px solid #fff; border-right: 1px solid #fff; width: 180px; padding: 9px 4px 7px 10px; }
+
+.fldData { background-color: #e6edf3; border-bottom: 1px solid #fff; padding: 7px 4px 8px 10px; width: 170px; }
+
+.tblFtr { background-color: #fff; }
+
+.tblFtr img { margin-left: 168px; }
+
+.tblFtr input { margin-left: 168px; }
+
+/*.smlField {  }*/
+
+.nrmlField { width: 200px; display: block; }
+
+.nrmlFieldCal { width: 200px; }
+
+.lrgField { width: 335px; display: block; }
+
+.nrmlSelectField { width: 200px; }
+
+.lrgSelectField { width: 335px; }
+
+.reqFlag { position: relative; margin-left: -14px; float: left; }
+
+tr.invalid td { background-color: #eccece; }
+
+tr.invalid td .imgAdd { border-right: 5px solid #eccece; }
+
+tr.invalid td strong { display: block; padding-top: 3px; color: #e01101; }
+
+.ErrMsg { font-weight: normal; display: block; }
+
+#frmBlue input, textarea, select { border: 1px solid #787878; }
+
+textarea { margin-bottom: 0; }
+
+select { background-color: #fff; }
+
+.inlineImg { margin-bottom: -5px; }
+
+.imgAdd { border-right: 5px solid #e6edf3; margin-bottom: -5px; padding-top: 5px; }
+
+.frmBtn { width: 90px; height: 24px; margin-top: 7px; }
+
+#frmBlue input.btnRadio { border: 0; }
+/* ------- Added class for above with span container ------- */
+#frmBlue span.btnRadio input { border: 0; }
+
+span.sp-Remaining { margin-right: 25px; }
+
+.tblHdrNrml { font-weight: normal; }
+
+.hdrCheckBoxBurridgeCampus { font-weight: bold; margin-bottom: -17px; padding-bottom: 0; }
+.hdrCheckBoxWaterfrontCampus { font-weight: bold; margin-bottom: -17px; padding-bottom: 0; margin-top: 7px; }
+
+#hlAboutTheSessions { float: right; }
+
+.checkboxlist { list-style: none; margin: 0; padding: 0; }
+.checkboxlist li { list-style: none; margin: 0; padding: 0; }
+
+.ui-widget { font-size: .875em!important; }
+
+.securefield { display: none; }

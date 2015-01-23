@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AwardsApplication.master.cs" Inherits="NSCC.Web.Awards.Application.MasterPages.AwardsApplication" %>
+
+<!doctype html>
+<html>
+
+	<head id="Head1" runat="server">
+	    
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />    
+		<meta charset="utf-8"/>
+
+		<title>Nova Scotia Community College - Awards</title>
+
+		<link rel="stylesheet" type="text/css" href="/inc/css/awards.css"/>
+		<link rel="stylesheet" type="text/css" href="/inc/css/style.min.css"/>
+		<link rel="stylesheet" type="text/css" media="print" href="/inc/css/print.min.css"/>
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="robots" content="ALL" />
+		<meta name="distribution" content="Global" />
+		<meta name="rating" content="Safe For Kids" />
+		<meta name="copyright" content="EQ Works Inc." />
+		<meta name="language" content="English" />
+		<meta name="doc-type" content="Public" />
+		<meta name="doc-class" content="Completed" />
+		<meta name="doc-rights" content="Copyrighted Work" />
+		<meta name="author" content="EQ Works Inc." />
+        
+        <script type="text/javascript">
+
+            function getFormId() {
+                return "<%= this.form1.UniqueID %>";
+
+            }
+
+            function getContainerId() {
+                return "<%= Body.UniqueID %>" + "$";
+            }
+        </script>
+
+        <asp:ContentPlaceHolder ID="HeadTag" runat="server">
+        </asp:ContentPlaceHolder>
+
+	</head>
+	
+	<body class="bgBorders_awards" lang="en">
+        <form id="form1" runat="server">
+            <!-- GRAY HEADER -->
+		    <div class="header_full_gray">
+		       <div id="globalContainer">	
+		   		    
+		   			    <a class="infotab right" href="http://www.nscc.ca/admissions/scholarships_and_bursaries/default.aspx">Visit nscc.ca Awards Info</a>
+		
+		       </div>
+		    </div>
+
+            <!-- TEXT HEADER -->
+		    <div class="header_full">
+		       <div id="globalContainer">	
+		        <img src="/img/designelements/nscc_logo.png" class="logo left">
+		    	    <h1 class="left">Awards Application</h1>
+                   <!--
+		    	    <a class="questions right">Questions</a>
+		    	    <a class="instructions right">Instructions</a>
+                    -->
+		       </div>
+		    </div>
+
+		    <div id="globalContainer" class="awards_application">
+		        
+                <!-- COOKIE TRAIL -->	
+			    <div id="cookietrail">
+    		        <asp:ContentPlaceHolder id="CookieTrail" runat="server"></asp:ContentPlaceHolder>
+    		    </div>
+            
+                <asp:ContentPlaceHolder id="Body" runat="server"></asp:ContentPlaceHolder>
+
+		    </div>
+
+
+            <!-- FOOTER -->
+		    <div class="footer_full">
+		        <div id="ftr-copyright">
+				    <ul>
+						    <li class="nopipe">© NSCC 2013</li>
+						    <li><a href="http://www.nscc.ca/privacy.asp">Privacy</a></li>
+						    <li><a href="http://www.nscc.ca/disclaimer.asp">Disclaimer</a></li>
+						    <!--<li><a href="https://nsccawards.cyberplex.com/search/site_map.asp">Sitemap</a></li>-->
+				    </ul>
+		        </div>
+		    </div>
+            
+            <asp:ContentPlaceHolder ID="HiddenElements" runat="server"></asp:ContentPlaceHolder>
+        </form>
+
+        <!-- Google Analytics Code -->        
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-2332805-24']);
+            _gaq.push(['_trackPageview']);
+            (function ()
+            {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+
+	</body>
+</html>

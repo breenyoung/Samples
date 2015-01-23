@@ -1,0 +1,32 @@
+<script type="text/javascript" src="https://www.google-analytics.com/ga.js"></script>
+<!-- script type="text/javascript" src="/inc/js/jquery-1.3.2.min.js"></script -->
+<script type="text/javascript" src="/inc/js/nscc.pagerating.js"></script>
+<div id="divPageRatingWidget">
+
+    <div id="divPageRatingWidgetStep1">
+        <p><img src="/img/DesignElements/CommentBubble.gif" alt="Comment Bubble" style="float: left;" />Was this page helpful?</p>
+        <a href="#" id="btnPageRatingYes"><img src="/img/DesignElements/btn-yes.gif" alt="Yes" title="Yes" style="width: 90px;" /></a>
+        <a href="#" id="btnPageRatingNo"><img src="/img/DesignElements/btn-no.gif" alt="No" title="No" style="width: 90px;" /></a>
+        <a href="#" id="btnPageRatingDontKnow"><img src="/img/DesignElements/btn-dontknow.gif" alt="Don't Know" title="Don't Know" style="width: 90px;" /></a>
+    </div>
+
+    <div id="divPageRatingWidgetStep2" style="display:none;">
+
+        <p id="spnPageRatingYesMessage" style="display: none;"><img src="/img/DesignElements/CommentBubble.gif" alt="Comment Bubble" style="float: left;" />How was this information helpful? (optional)</p>
+        <p id="spnPageRatingNoMessage" style="display: none;"><img src="/img/DesignElements/CommentBubble.gif" alt="Comment Bubble" style="float: left;" />How can we make this information more helpful? (optional)</p>
+        <p id="spnPageRatingDNMessage" style="display: none;"><img src="/img/DesignElements/CommentBubble.gif" alt="Comment Bubble" style="float: left;" />What were you trying to do? (optional)</p>
+
+        <textarea id="taPageRatingComments" rows="" cols=""></textarea><br />
+
+        <div id="PageRatingRemaining">
+            <span class="sp-submit"><a href="#" id="btnPageRatingSubmit"><img src="/img/DesignElements/btn-submit.gif" alt="Submit" title="Submit" style="width: 90px;"/></a></span>
+            <span class="sp-Remaining">Remaining characters: <span id="spnPageRatingCharsLeft">500</span></span>
+        </div>
+
+        <input type="hidden" id="hfPageRatingId" />
+
+    </div>
+
+    <div id="divPageRatingWidgetStep3" style="display:none;">Thank you for your feedback.</div>
+
+</div>

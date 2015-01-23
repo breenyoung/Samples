@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://www.nscc.ca/Apps/Nscc.CurrentPrograms/CurrentPrograms.asmx?wsdl" docRef="http://www.nscc.ca/Apps/Nscc.CurrentPrograms/CurrentPrograms.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://www.nscc.ca/Apps/Nscc.CurrentPrograms/CurrentPrograms.asmx" xmlns:q1="http://tempuri.org/" binding="q1:CurrentProgramsSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://www.nscc.ca/Apps/Nscc.CurrentPrograms/CurrentPrograms.asmx" xmlns:q2="http://tempuri.org/" binding="q2:CurrentProgramsSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

@@ -1,0 +1,3337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllCampusesForPreviousYear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="programId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCampusesForPreviousYearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCampusesForPreviousYearResult" type="tns:ArrayOfCampus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCampus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Campus" nillable="true" type="tns:Campus" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Campus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CampusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CampusDescr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllCampusesForBogStaffNomination">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="programId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCampusesForBogStaffNominationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCampusesForBogStaffNominationResult" type="tns:ArrayOfCampus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCampuses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="programId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCampusesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCampusesResult" type="tns:ArrayOfCampus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCampusesForProgramInformationSessions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="programId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCampusesForProgramInformationSessionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCampusesForProgramInformationSessionsResult" type="tns:ArrayOfCampus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampusById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="campusCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampusByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCampusByIdResult" type="tns:ArrayOfCampus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTestDriveProgramsByCampuses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="campuses" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTestDriveProgramsByCampusesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTestDriveProgramsByCampusesResult" type="tns:ArrayOfProgram" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProgram">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Program" nillable="true" type="tns:Program" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Program">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProgramCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProgramDescr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Campuses" type="tns:ArrayOfCampus" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProgramsForPreviousYear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="substring" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="campusCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProgramsForPreviousYearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProgramsForPreviousYearResult" type="tns:ArrayOfProgram" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProgramInformationSessionPrograms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="substring" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="campusCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProgramInformationSessionProgramsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProgramInformationSessionProgramsResult" type="tns:ArrayOfProgram" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTestDrivePrograms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="substring" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="campusCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTestDriveProgramsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTestDriveProgramsResult" type="tns:ArrayOfProgram" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfoSessionPrograms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="substring" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="campusCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfoSessionProgramsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInfoSessionProgramsResult" type="tns:ArrayOfProgram" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampusesForProgramForPreviousYear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampusesForProgramForPreviousYearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCampusesForProgramForPreviousYearResult" type="tns:ArrayOfCampus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampusesForProgram">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampusesForProgramResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCampusesForProgramResult" type="tns:ArrayOfCampus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProgramByIdForPreviousYear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProgramByIdForPreviousYearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProgramByIdForPreviousYearResult" type="tns:ArrayOfProgram" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProgramById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProgramByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProgramByIdResult" type="tns:ArrayOfProgram" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampusesForProgramInformationSessionProgram">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampusesForProgramInformationSessionProgramResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCampusesForProgramInformationSessionProgramResult" type="tns:ArrayOfCampus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampusesForTestDriveProgram">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampusesForTestDriveProgramResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCampusesForTestDriveProgramResult" type="tns:ArrayOfCampus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProgramInformationSessionProgramById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProgramInformationSessionProgramByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProgramInformationSessionProgramByIdResult" type="tns:ArrayOfProgram" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTestDriveProgramById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTestDriveProgramByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTestDriveProgramByIdResult" type="tns:ArrayOfProgram" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInformationDatesForLookup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="campusCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="programCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInformationDatesForLookupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInformationDatesForLookupResult" type="tns:ArrayOfInformationDate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInformationDate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InformationDate" nillable="true" type="tns:InformationDate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InformationDate">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CampusName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProgramCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RawProgramCodes" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetInformationDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="campusCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="programCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInformationDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInformationDatesResult" type="tns:ArrayOfInformationDate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampusMappings">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCampusMappingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCampusMappingsResult" type="tns:ArrayOfCampusMapping" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCampusMapping">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CampusMapping" nillable="true" type="tns:CampusMapping" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CampusMapping">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CampusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProgramCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActualCampusCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetInformationDateById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInformationDateByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInformationDateByIdResult" type="tns:ArrayOfInformationDate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitPageRating">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="choice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitPageRatingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitPageRatingResult" type="tns:PageRating" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PageRating">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="rating" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pagelocation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pagetitle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="datesubmitted" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="browser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="useragent" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePageRating">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePageRatingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePageRatingResult" type="tns:PageRating" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllResponseTypes">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllResponseTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllResponseTypesResult" type="tns:ArrayOfContactUsResponseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfContactUsResponseType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ContactUsResponseType" nillable="true" type="tns:ContactUsResponseType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ContactUsResponseType">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Desc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllSubjects">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllSubjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllSubjectsResult" type="tns:ArrayOfContactUsSubject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfContactUsSubject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ContactUsSubject" nillable="true" type="tns:ContactUsSubject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ContactUsSubject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Desc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPhotoGallerySet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPhotoGallerySetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPhotoGallerySetResult" type="tns:ArrayOfPhotoGalleryItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPhotoGalleryItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PhotoGalleryItem" nillable="true" type="tns:PhotoGalleryItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PhotoGalleryItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImageUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tags" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetJumpStartSessions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="campus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="school" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="program" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJumpStartSessionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJumpStartSessionsResult" type="tns:ArrayOfJumpStartSessionVo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfJumpStartSessionVo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="JumpStartSessionVo" nillable="true" type="tns:JumpStartSessionVo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="JumpStartSessionVo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SessionId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Campus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="School" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Program" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SessionDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SortOrder" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetJumpStartStudentByFormId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="formId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJumpStartStudentByFormIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJumpStartStudentByFormIdResult" type="tns:JumpStartStudentVo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="JumpStartStudentVo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StudentNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Program" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Campus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="School" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetJumpStartStudent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="studentNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJumpStartStudentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJumpStartStudentResult" type="tns:JumpStartStudentVo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPrograms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="substring" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="campusCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllProgramsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllProgramsResult" type="tns:ArrayOfProgram" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSummerRefresherSessions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="campus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="school" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="program" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSummerRefresherSessionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSummerRefresherSessionsResult" type="tns:ArrayOfSummerRefresherSessionVo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSummerRefresherSessionVo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SummerRefresherSessionVo" nillable="true" type="tns:SummerRefresherSessionVo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SummerRefresherSessionVo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SessionId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Campus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CampusDisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="School" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Program" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SessionDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SortOrder" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SessionType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSummerRefresherSessionById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSummerRefresherSessionByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSummerRefresherSessionByIdResult" type="tns:SummerRefresherSessionVo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSummerRefresherStudent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="studentNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSummerRefresherStudentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSummerRefresherStudentResult" type="tns:SummerRefresherStudentVo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SummerRefresherStudentVo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StudentNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Program" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Campus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="School" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllCampusInformation">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllCampusInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCampusInformationResult" type="tns:ArrayOfCampusInformationVo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCampusInformationVo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CampusInformationVo" nillable="true" type="tns:CampusInformationVo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CampusInformationVo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CampusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Province" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MapUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactTitle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactPhone" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowsTours" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CampusTourName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TourType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CampusTourType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CampusExplorationSessionType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCampusInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="campusCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampusInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCampusInformationResult" type="tns:CampusInformationVo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetToursForCampus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="campusCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetToursForCampusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetToursForCampusResult" type="tns:ArrayOfCampusTourVo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCampusTourVo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CampusTourVo" nillable="true" type="tns:CampusTourVo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CampusTourVo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CampusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowOnInfoSessionForm" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCareerExplorationSessionDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="campusCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCareerExplorationSessionDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCareerExplorationSessionDatesResult" type="tns:ArrayOfCareerExplorationSessionDateVo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCareerExplorationSessionDateVo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CareerExplorationSessionDateVo" nillable="true" type="tns:CareerExplorationSessionDateVo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CareerExplorationSessionDateVo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CampusCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ArrayOfCampus" nillable="true" type="tns:ArrayOfCampus" />
+      <s:element name="ArrayOfProgram" nillable="true" type="tns:ArrayOfProgram" />
+      <s:element name="ArrayOfInformationDate" nillable="true" type="tns:ArrayOfInformationDate" />
+      <s:element name="ArrayOfCampusMapping" nillable="true" type="tns:ArrayOfCampusMapping" />
+      <s:element name="PageRating" nillable="true" type="tns:PageRating" />
+      <s:element name="ArrayOfContactUsResponseType" nillable="true" type="tns:ArrayOfContactUsResponseType" />
+      <s:element name="ArrayOfContactUsSubject" nillable="true" type="tns:ArrayOfContactUsSubject" />
+      <s:element name="ArrayOfPhotoGalleryItem" nillable="true" type="tns:ArrayOfPhotoGalleryItem" />
+      <s:element name="ArrayOfJumpStartSessionVo" nillable="true" type="tns:ArrayOfJumpStartSessionVo" />
+      <s:element name="JumpStartStudentVo" nillable="true" type="tns:JumpStartStudentVo" />
+      <s:element name="ArrayOfSummerRefresherSessionVo" nillable="true" type="tns:ArrayOfSummerRefresherSessionVo" />
+      <s:element name="SummerRefresherSessionVo" nillable="true" type="tns:SummerRefresherSessionVo" />
+      <s:element name="SummerRefresherStudentVo" nillable="true" type="tns:SummerRefresherStudentVo" />
+      <s:element name="ArrayOfCampusInformationVo" nillable="true" type="tns:ArrayOfCampusInformationVo" />
+      <s:element name="CampusInformationVo" nillable="true" type="tns:CampusInformationVo" />
+      <s:element name="ArrayOfCampusTourVo" nillable="true" type="tns:ArrayOfCampusTourVo" />
+      <s:element name="ArrayOfCareerExplorationSessionDateVo" nillable="true" type="tns:ArrayOfCareerExplorationSessionDateVo" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllCampusesForPreviousYearSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCampusesForPreviousYear" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForPreviousYearSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCampusesForPreviousYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForBogStaffNominationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCampusesForBogStaffNomination" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForBogStaffNominationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCampusesForBogStaffNominationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCampuses" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCampusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForProgramInformationSessionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCampusesForProgramInformationSessions" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForProgramInformationSessionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCampusesForProgramInformationSessionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCampusById" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCampusByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramsByCampusesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTestDriveProgramsByCampuses" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramsByCampusesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTestDriveProgramsByCampusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramsForPreviousYearSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProgramsForPreviousYear" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramsForPreviousYearSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProgramsForPreviousYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramInformationSessionProgramsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProgramInformationSessionPrograms" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramInformationSessionProgramsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProgramInformationSessionProgramsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTestDrivePrograms" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTestDriveProgramsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoSessionProgramsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInfoSessionPrograms" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoSessionProgramsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInfoSessionProgramsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramForPreviousYearSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCampusesForProgramForPreviousYear" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramForPreviousYearSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCampusesForProgramForPreviousYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCampusesForProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCampusesForProgramResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByIdForPreviousYearSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProgramByIdForPreviousYear" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByIdForPreviousYearSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProgramByIdForPreviousYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProgramById" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProgramByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramInformationSessionProgramSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCampusesForProgramInformationSessionProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramInformationSessionProgramSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCampusesForProgramInformationSessionProgramResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForTestDriveProgramSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCampusesForTestDriveProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForTestDriveProgramSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCampusesForTestDriveProgramResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramInformationSessionProgramByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProgramInformationSessionProgramById" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramInformationSessionProgramByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProgramInformationSessionProgramByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTestDriveProgramById" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTestDriveProgramByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDatesForLookupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInformationDatesForLookup" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDatesForLookupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInformationDatesForLookupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInformationDates" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInformationDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusMappingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCampusMappings" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusMappingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCampusMappingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDateByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInformationDateById" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDateByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInformationDateByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitPageRatingSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitPageRating" />
+  </wsdl:message>
+  <wsdl:message name="SubmitPageRatingSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitPageRatingResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePageRatingSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePageRating" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePageRatingSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePageRatingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllResponseTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllResponseTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetAllResponseTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllResponseTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSubjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllSubjects" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSubjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllSubjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPhotoGallerySetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPhotoGallerySet" />
+  </wsdl:message>
+  <wsdl:message name="GetPhotoGallerySetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPhotoGallerySetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartSessionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJumpStartSessions" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartSessionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJumpStartSessionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartStudentByFormIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJumpStartStudentByFormId" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartStudentByFormIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJumpStartStudentByFormIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartStudentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJumpStartStudent" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartStudentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJumpStartStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProgramsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPrograms" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProgramsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllProgramsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherSessionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSummerRefresherSessions" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherSessionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSummerRefresherSessionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherSessionByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSummerRefresherSessionById" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherSessionByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSummerRefresherSessionByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherStudentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSummerRefresherStudent" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherStudentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSummerRefresherStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCampusInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCampusInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCampusInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCampusInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetToursForCampusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetToursForCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetToursForCampusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetToursForCampusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCareerExplorationSessionDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCareerExplorationSessionDates" />
+  </wsdl:message>
+  <wsdl:message name="GetCareerExplorationSessionDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCareerExplorationSessionDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForPreviousYearHttpGetIn">
+    <wsdl:part name="programId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForPreviousYearHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForBogStaffNominationHttpGetIn">
+    <wsdl:part name="programId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForBogStaffNominationHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesHttpGetIn">
+    <wsdl:part name="programId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForProgramInformationSessionsHttpGetIn">
+    <wsdl:part name="programId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForProgramInformationSessionsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusByIdHttpGetIn">
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramsByCampusesHttpGetIn">
+    <wsdl:part name="campuses" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramsByCampusesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramsForPreviousYearHttpGetIn">
+    <wsdl:part name="substring" type="s:string" />
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramsForPreviousYearHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramInformationSessionProgramsHttpGetIn">
+    <wsdl:part name="substring" type="s:string" />
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramInformationSessionProgramsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramsHttpGetIn">
+    <wsdl:part name="substring" type="s:string" />
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoSessionProgramsHttpGetIn">
+    <wsdl:part name="substring" type="s:string" />
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoSessionProgramsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramForPreviousYearHttpGetIn">
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramForPreviousYearHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramHttpGetIn">
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByIdForPreviousYearHttpGetIn">
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByIdForPreviousYearHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByIdHttpGetIn">
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramInformationSessionProgramHttpGetIn">
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramInformationSessionProgramHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForTestDriveProgramHttpGetIn">
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForTestDriveProgramHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramInformationSessionProgramByIdHttpGetIn">
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramInformationSessionProgramByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramByIdHttpGetIn">
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDatesForLookupHttpGetIn">
+    <wsdl:part name="campusCode" type="s:string" />
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDatesForLookupHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInformationDate" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDatesHttpGetIn">
+    <wsdl:part name="campusCode" type="s:string" />
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDatesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInformationDate" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusMappingsHttpGetIn" />
+  <wsdl:message name="GetCampusMappingsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampusMapping" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDateByIdHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDateByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInformationDate" />
+  </wsdl:message>
+  <wsdl:message name="SubmitPageRatingHttpGetIn">
+    <wsdl:part name="choice" type="s:string" />
+    <wsdl:part name="url" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SubmitPageRatingHttpGetOut">
+    <wsdl:part name="Body" element="tns:PageRating" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePageRatingHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="comments" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePageRatingHttpGetOut">
+    <wsdl:part name="Body" element="tns:PageRating" />
+  </wsdl:message>
+  <wsdl:message name="GetAllResponseTypesHttpGetIn" />
+  <wsdl:message name="GetAllResponseTypesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfContactUsResponseType" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSubjectsHttpGetIn" />
+  <wsdl:message name="GetAllSubjectsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfContactUsSubject" />
+  </wsdl:message>
+  <wsdl:message name="GetPhotoGallerySetHttpGetIn">
+    <wsdl:part name="setName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPhotoGallerySetHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPhotoGalleryItem" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartSessionsHttpGetIn">
+    <wsdl:part name="campus" type="s:string" />
+    <wsdl:part name="school" type="s:string" />
+    <wsdl:part name="program" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartSessionsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfJumpStartSessionVo" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartStudentByFormIdHttpGetIn">
+    <wsdl:part name="formId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartStudentByFormIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:JumpStartStudentVo" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartStudentHttpGetIn">
+    <wsdl:part name="studentNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartStudentHttpGetOut">
+    <wsdl:part name="Body" element="tns:JumpStartStudentVo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProgramsHttpGetIn">
+    <wsdl:part name="substring" type="s:string" />
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProgramsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherSessionsHttpGetIn">
+    <wsdl:part name="campus" type="s:string" />
+    <wsdl:part name="school" type="s:string" />
+    <wsdl:part name="program" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherSessionsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSummerRefresherSessionVo" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherSessionByIdHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherSessionByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:SummerRefresherSessionVo" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherStudentHttpGetIn">
+    <wsdl:part name="studentNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherStudentHttpGetOut">
+    <wsdl:part name="Body" element="tns:SummerRefresherStudentVo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusInformationHttpGetIn" />
+  <wsdl:message name="GetAllCampusInformationHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampusInformationVo" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusInformationHttpGetIn">
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusInformationHttpGetOut">
+    <wsdl:part name="Body" element="tns:CampusInformationVo" />
+  </wsdl:message>
+  <wsdl:message name="GetToursForCampusHttpGetIn">
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetToursForCampusHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampusTourVo" />
+  </wsdl:message>
+  <wsdl:message name="GetCareerExplorationSessionDatesHttpGetIn">
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCareerExplorationSessionDatesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCareerExplorationSessionDateVo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForPreviousYearHttpPostIn">
+    <wsdl:part name="programId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForPreviousYearHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForBogStaffNominationHttpPostIn">
+    <wsdl:part name="programId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForBogStaffNominationHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesHttpPostIn">
+    <wsdl:part name="programId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForProgramInformationSessionsHttpPostIn">
+    <wsdl:part name="programId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusesForProgramInformationSessionsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusByIdHttpPostIn">
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramsByCampusesHttpPostIn">
+    <wsdl:part name="campuses" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramsByCampusesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramsForPreviousYearHttpPostIn">
+    <wsdl:part name="substring" type="s:string" />
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramsForPreviousYearHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramInformationSessionProgramsHttpPostIn">
+    <wsdl:part name="substring" type="s:string" />
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramInformationSessionProgramsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramsHttpPostIn">
+    <wsdl:part name="substring" type="s:string" />
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoSessionProgramsHttpPostIn">
+    <wsdl:part name="substring" type="s:string" />
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoSessionProgramsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramForPreviousYearHttpPostIn">
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramForPreviousYearHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramHttpPostIn">
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByIdForPreviousYearHttpPostIn">
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByIdForPreviousYearHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByIdHttpPostIn">
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramInformationSessionProgramHttpPostIn">
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForProgramInformationSessionProgramHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForTestDriveProgramHttpPostIn">
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusesForTestDriveProgramHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampus" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramInformationSessionProgramByIdHttpPostIn">
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramInformationSessionProgramByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramByIdHttpPostIn">
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTestDriveProgramByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDatesForLookupHttpPostIn">
+    <wsdl:part name="campusCode" type="s:string" />
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDatesForLookupHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInformationDate" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDatesHttpPostIn">
+    <wsdl:part name="campusCode" type="s:string" />
+    <wsdl:part name="programCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDatesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInformationDate" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusMappingsHttpPostIn" />
+  <wsdl:message name="GetCampusMappingsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampusMapping" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDateByIdHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationDateByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInformationDate" />
+  </wsdl:message>
+  <wsdl:message name="SubmitPageRatingHttpPostIn">
+    <wsdl:part name="choice" type="s:string" />
+    <wsdl:part name="url" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SubmitPageRatingHttpPostOut">
+    <wsdl:part name="Body" element="tns:PageRating" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePageRatingHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="comments" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePageRatingHttpPostOut">
+    <wsdl:part name="Body" element="tns:PageRating" />
+  </wsdl:message>
+  <wsdl:message name="GetAllResponseTypesHttpPostIn" />
+  <wsdl:message name="GetAllResponseTypesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfContactUsResponseType" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSubjectsHttpPostIn" />
+  <wsdl:message name="GetAllSubjectsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfContactUsSubject" />
+  </wsdl:message>
+  <wsdl:message name="GetPhotoGallerySetHttpPostIn">
+    <wsdl:part name="setName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPhotoGallerySetHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPhotoGalleryItem" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartSessionsHttpPostIn">
+    <wsdl:part name="campus" type="s:string" />
+    <wsdl:part name="school" type="s:string" />
+    <wsdl:part name="program" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartSessionsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfJumpStartSessionVo" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartStudentByFormIdHttpPostIn">
+    <wsdl:part name="formId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartStudentByFormIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:JumpStartStudentVo" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartStudentHttpPostIn">
+    <wsdl:part name="studentNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetJumpStartStudentHttpPostOut">
+    <wsdl:part name="Body" element="tns:JumpStartStudentVo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProgramsHttpPostIn">
+    <wsdl:part name="substring" type="s:string" />
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProgramsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgram" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherSessionsHttpPostIn">
+    <wsdl:part name="campus" type="s:string" />
+    <wsdl:part name="school" type="s:string" />
+    <wsdl:part name="program" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherSessionsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSummerRefresherSessionVo" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherSessionByIdHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherSessionByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:SummerRefresherSessionVo" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherStudentHttpPostIn">
+    <wsdl:part name="studentNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSummerRefresherStudentHttpPostOut">
+    <wsdl:part name="Body" element="tns:SummerRefresherStudentVo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCampusInformationHttpPostIn" />
+  <wsdl:message name="GetAllCampusInformationHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampusInformationVo" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusInformationHttpPostIn">
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampusInformationHttpPostOut">
+    <wsdl:part name="Body" element="tns:CampusInformationVo" />
+  </wsdl:message>
+  <wsdl:message name="GetToursForCampusHttpPostIn">
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetToursForCampusHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCampusTourVo" />
+  </wsdl:message>
+  <wsdl:message name="GetCareerExplorationSessionDatesHttpPostIn">
+    <wsdl:part name="campusCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCareerExplorationSessionDatesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCareerExplorationSessionDateVo" />
+  </wsdl:message>
+  <wsdl:portType name="NsccServiceSoap">
+    <wsdl:operation name="GetAllCampusesForPreviousYear">
+      <wsdl:input message="tns:GetAllCampusesForPreviousYearSoapIn" />
+      <wsdl:output message="tns:GetAllCampusesForPreviousYearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusesForBogStaffNomination">
+      <wsdl:input message="tns:GetAllCampusesForBogStaffNominationSoapIn" />
+      <wsdl:output message="tns:GetAllCampusesForBogStaffNominationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampuses">
+      <wsdl:input message="tns:GetAllCampusesSoapIn" />
+      <wsdl:output message="tns:GetAllCampusesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusesForProgramInformationSessions">
+      <wsdl:input message="tns:GetAllCampusesForProgramInformationSessionsSoapIn" />
+      <wsdl:output message="tns:GetAllCampusesForProgramInformationSessionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusById">
+      <wsdl:input message="tns:GetCampusByIdSoapIn" />
+      <wsdl:output message="tns:GetCampusByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDriveProgramsByCampuses">
+      <wsdl:input message="tns:GetTestDriveProgramsByCampusesSoapIn" />
+      <wsdl:output message="tns:GetTestDriveProgramsByCampusesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramsForPreviousYear">
+      <wsdl:input message="tns:GetProgramsForPreviousYearSoapIn" />
+      <wsdl:output message="tns:GetProgramsForPreviousYearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramInformationSessionPrograms">
+      <wsdl:input message="tns:GetProgramInformationSessionProgramsSoapIn" />
+      <wsdl:output message="tns:GetProgramInformationSessionProgramsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDrivePrograms">
+      <wsdl:input message="tns:GetTestDriveProgramsSoapIn" />
+      <wsdl:output message="tns:GetTestDriveProgramsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoSessionPrograms">
+      <wsdl:input message="tns:GetInfoSessionProgramsSoapIn" />
+      <wsdl:output message="tns:GetInfoSessionProgramsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgramForPreviousYear">
+      <wsdl:input message="tns:GetCampusesForProgramForPreviousYearSoapIn" />
+      <wsdl:output message="tns:GetCampusesForProgramForPreviousYearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgram">
+      <wsdl:input message="tns:GetCampusesForProgramSoapIn" />
+      <wsdl:output message="tns:GetCampusesForProgramSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramByIdForPreviousYear">
+      <wsdl:input message="tns:GetProgramByIdForPreviousYearSoapIn" />
+      <wsdl:output message="tns:GetProgramByIdForPreviousYearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramById">
+      <wsdl:input message="tns:GetProgramByIdSoapIn" />
+      <wsdl:output message="tns:GetProgramByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgramInformationSessionProgram">
+      <wsdl:input message="tns:GetCampusesForProgramInformationSessionProgramSoapIn" />
+      <wsdl:output message="tns:GetCampusesForProgramInformationSessionProgramSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForTestDriveProgram">
+      <wsdl:input message="tns:GetCampusesForTestDriveProgramSoapIn" />
+      <wsdl:output message="tns:GetCampusesForTestDriveProgramSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramInformationSessionProgramById">
+      <wsdl:input message="tns:GetProgramInformationSessionProgramByIdSoapIn" />
+      <wsdl:output message="tns:GetProgramInformationSessionProgramByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDriveProgramById">
+      <wsdl:input message="tns:GetTestDriveProgramByIdSoapIn" />
+      <wsdl:output message="tns:GetTestDriveProgramByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDatesForLookup">
+      <wsdl:input message="tns:GetInformationDatesForLookupSoapIn" />
+      <wsdl:output message="tns:GetInformationDatesForLookupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDates">
+      <wsdl:input message="tns:GetInformationDatesSoapIn" />
+      <wsdl:output message="tns:GetInformationDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusMappings">
+      <wsdl:input message="tns:GetCampusMappingsSoapIn" />
+      <wsdl:output message="tns:GetCampusMappingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDateById">
+      <wsdl:input message="tns:GetInformationDateByIdSoapIn" />
+      <wsdl:output message="tns:GetInformationDateByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitPageRating">
+      <wsdl:input message="tns:SubmitPageRatingSoapIn" />
+      <wsdl:output message="tns:SubmitPageRatingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePageRating">
+      <wsdl:input message="tns:UpdatePageRatingSoapIn" />
+      <wsdl:output message="tns:UpdatePageRatingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllResponseTypes">
+      <wsdl:input message="tns:GetAllResponseTypesSoapIn" />
+      <wsdl:output message="tns:GetAllResponseTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubjects">
+      <wsdl:input message="tns:GetAllSubjectsSoapIn" />
+      <wsdl:output message="tns:GetAllSubjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotoGallerySet">
+      <wsdl:input message="tns:GetPhotoGallerySetSoapIn" />
+      <wsdl:output message="tns:GetPhotoGallerySetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartSessions">
+      <wsdl:input message="tns:GetJumpStartSessionsSoapIn" />
+      <wsdl:output message="tns:GetJumpStartSessionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartStudentByFormId">
+      <wsdl:input message="tns:GetJumpStartStudentByFormIdSoapIn" />
+      <wsdl:output message="tns:GetJumpStartStudentByFormIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartStudent">
+      <wsdl:input message="tns:GetJumpStartStudentSoapIn" />
+      <wsdl:output message="tns:GetJumpStartStudentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPrograms">
+      <wsdl:input message="tns:GetAllProgramsSoapIn" />
+      <wsdl:output message="tns:GetAllProgramsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherSessions">
+      <wsdl:input message="tns:GetSummerRefresherSessionsSoapIn" />
+      <wsdl:output message="tns:GetSummerRefresherSessionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherSessionById">
+      <wsdl:input message="tns:GetSummerRefresherSessionByIdSoapIn" />
+      <wsdl:output message="tns:GetSummerRefresherSessionByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherStudent">
+      <wsdl:input message="tns:GetSummerRefresherStudentSoapIn" />
+      <wsdl:output message="tns:GetSummerRefresherStudentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusInformation">
+      <wsdl:input message="tns:GetAllCampusInformationSoapIn" />
+      <wsdl:output message="tns:GetAllCampusInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusInformation">
+      <wsdl:input message="tns:GetCampusInformationSoapIn" />
+      <wsdl:output message="tns:GetCampusInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToursForCampus">
+      <wsdl:input message="tns:GetToursForCampusSoapIn" />
+      <wsdl:output message="tns:GetToursForCampusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCareerExplorationSessionDates">
+      <wsdl:input message="tns:GetCareerExplorationSessionDatesSoapIn" />
+      <wsdl:output message="tns:GetCareerExplorationSessionDatesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="NsccServiceHttpGet">
+    <wsdl:operation name="GetAllCampusesForPreviousYear">
+      <wsdl:input message="tns:GetAllCampusesForPreviousYearHttpGetIn" />
+      <wsdl:output message="tns:GetAllCampusesForPreviousYearHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusesForBogStaffNomination">
+      <wsdl:input message="tns:GetAllCampusesForBogStaffNominationHttpGetIn" />
+      <wsdl:output message="tns:GetAllCampusesForBogStaffNominationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampuses">
+      <wsdl:input message="tns:GetAllCampusesHttpGetIn" />
+      <wsdl:output message="tns:GetAllCampusesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusesForProgramInformationSessions">
+      <wsdl:input message="tns:GetAllCampusesForProgramInformationSessionsHttpGetIn" />
+      <wsdl:output message="tns:GetAllCampusesForProgramInformationSessionsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusById">
+      <wsdl:input message="tns:GetCampusByIdHttpGetIn" />
+      <wsdl:output message="tns:GetCampusByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDriveProgramsByCampuses">
+      <wsdl:input message="tns:GetTestDriveProgramsByCampusesHttpGetIn" />
+      <wsdl:output message="tns:GetTestDriveProgramsByCampusesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramsForPreviousYear">
+      <wsdl:input message="tns:GetProgramsForPreviousYearHttpGetIn" />
+      <wsdl:output message="tns:GetProgramsForPreviousYearHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramInformationSessionPrograms">
+      <wsdl:input message="tns:GetProgramInformationSessionProgramsHttpGetIn" />
+      <wsdl:output message="tns:GetProgramInformationSessionProgramsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDrivePrograms">
+      <wsdl:input message="tns:GetTestDriveProgramsHttpGetIn" />
+      <wsdl:output message="tns:GetTestDriveProgramsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoSessionPrograms">
+      <wsdl:input message="tns:GetInfoSessionProgramsHttpGetIn" />
+      <wsdl:output message="tns:GetInfoSessionProgramsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgramForPreviousYear">
+      <wsdl:input message="tns:GetCampusesForProgramForPreviousYearHttpGetIn" />
+      <wsdl:output message="tns:GetCampusesForProgramForPreviousYearHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgram">
+      <wsdl:input message="tns:GetCampusesForProgramHttpGetIn" />
+      <wsdl:output message="tns:GetCampusesForProgramHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramByIdForPreviousYear">
+      <wsdl:input message="tns:GetProgramByIdForPreviousYearHttpGetIn" />
+      <wsdl:output message="tns:GetProgramByIdForPreviousYearHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramById">
+      <wsdl:input message="tns:GetProgramByIdHttpGetIn" />
+      <wsdl:output message="tns:GetProgramByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgramInformationSessionProgram">
+      <wsdl:input message="tns:GetCampusesForProgramInformationSessionProgramHttpGetIn" />
+      <wsdl:output message="tns:GetCampusesForProgramInformationSessionProgramHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForTestDriveProgram">
+      <wsdl:input message="tns:GetCampusesForTestDriveProgramHttpGetIn" />
+      <wsdl:output message="tns:GetCampusesForTestDriveProgramHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramInformationSessionProgramById">
+      <wsdl:input message="tns:GetProgramInformationSessionProgramByIdHttpGetIn" />
+      <wsdl:output message="tns:GetProgramInformationSessionProgramByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDriveProgramById">
+      <wsdl:input message="tns:GetTestDriveProgramByIdHttpGetIn" />
+      <wsdl:output message="tns:GetTestDriveProgramByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDatesForLookup">
+      <wsdl:input message="tns:GetInformationDatesForLookupHttpGetIn" />
+      <wsdl:output message="tns:GetInformationDatesForLookupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDates">
+      <wsdl:input message="tns:GetInformationDatesHttpGetIn" />
+      <wsdl:output message="tns:GetInformationDatesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusMappings">
+      <wsdl:input message="tns:GetCampusMappingsHttpGetIn" />
+      <wsdl:output message="tns:GetCampusMappingsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDateById">
+      <wsdl:input message="tns:GetInformationDateByIdHttpGetIn" />
+      <wsdl:output message="tns:GetInformationDateByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitPageRating">
+      <wsdl:input message="tns:SubmitPageRatingHttpGetIn" />
+      <wsdl:output message="tns:SubmitPageRatingHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePageRating">
+      <wsdl:input message="tns:UpdatePageRatingHttpGetIn" />
+      <wsdl:output message="tns:UpdatePageRatingHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllResponseTypes">
+      <wsdl:input message="tns:GetAllResponseTypesHttpGetIn" />
+      <wsdl:output message="tns:GetAllResponseTypesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubjects">
+      <wsdl:input message="tns:GetAllSubjectsHttpGetIn" />
+      <wsdl:output message="tns:GetAllSubjectsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotoGallerySet">
+      <wsdl:input message="tns:GetPhotoGallerySetHttpGetIn" />
+      <wsdl:output message="tns:GetPhotoGallerySetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartSessions">
+      <wsdl:input message="tns:GetJumpStartSessionsHttpGetIn" />
+      <wsdl:output message="tns:GetJumpStartSessionsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartStudentByFormId">
+      <wsdl:input message="tns:GetJumpStartStudentByFormIdHttpGetIn" />
+      <wsdl:output message="tns:GetJumpStartStudentByFormIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartStudent">
+      <wsdl:input message="tns:GetJumpStartStudentHttpGetIn" />
+      <wsdl:output message="tns:GetJumpStartStudentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPrograms">
+      <wsdl:input message="tns:GetAllProgramsHttpGetIn" />
+      <wsdl:output message="tns:GetAllProgramsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherSessions">
+      <wsdl:input message="tns:GetSummerRefresherSessionsHttpGetIn" />
+      <wsdl:output message="tns:GetSummerRefresherSessionsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherSessionById">
+      <wsdl:input message="tns:GetSummerRefresherSessionByIdHttpGetIn" />
+      <wsdl:output message="tns:GetSummerRefresherSessionByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherStudent">
+      <wsdl:input message="tns:GetSummerRefresherStudentHttpGetIn" />
+      <wsdl:output message="tns:GetSummerRefresherStudentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusInformation">
+      <wsdl:input message="tns:GetAllCampusInformationHttpGetIn" />
+      <wsdl:output message="tns:GetAllCampusInformationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusInformation">
+      <wsdl:input message="tns:GetCampusInformationHttpGetIn" />
+      <wsdl:output message="tns:GetCampusInformationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToursForCampus">
+      <wsdl:input message="tns:GetToursForCampusHttpGetIn" />
+      <wsdl:output message="tns:GetToursForCampusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCareerExplorationSessionDates">
+      <wsdl:input message="tns:GetCareerExplorationSessionDatesHttpGetIn" />
+      <wsdl:output message="tns:GetCareerExplorationSessionDatesHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="NsccServiceHttpPost">
+    <wsdl:operation name="GetAllCampusesForPreviousYear">
+      <wsdl:input message="tns:GetAllCampusesForPreviousYearHttpPostIn" />
+      <wsdl:output message="tns:GetAllCampusesForPreviousYearHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusesForBogStaffNomination">
+      <wsdl:input message="tns:GetAllCampusesForBogStaffNominationHttpPostIn" />
+      <wsdl:output message="tns:GetAllCampusesForBogStaffNominationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampuses">
+      <wsdl:input message="tns:GetAllCampusesHttpPostIn" />
+      <wsdl:output message="tns:GetAllCampusesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusesForProgramInformationSessions">
+      <wsdl:input message="tns:GetAllCampusesForProgramInformationSessionsHttpPostIn" />
+      <wsdl:output message="tns:GetAllCampusesForProgramInformationSessionsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusById">
+      <wsdl:input message="tns:GetCampusByIdHttpPostIn" />
+      <wsdl:output message="tns:GetCampusByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDriveProgramsByCampuses">
+      <wsdl:input message="tns:GetTestDriveProgramsByCampusesHttpPostIn" />
+      <wsdl:output message="tns:GetTestDriveProgramsByCampusesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramsForPreviousYear">
+      <wsdl:input message="tns:GetProgramsForPreviousYearHttpPostIn" />
+      <wsdl:output message="tns:GetProgramsForPreviousYearHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramInformationSessionPrograms">
+      <wsdl:input message="tns:GetProgramInformationSessionProgramsHttpPostIn" />
+      <wsdl:output message="tns:GetProgramInformationSessionProgramsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDrivePrograms">
+      <wsdl:input message="tns:GetTestDriveProgramsHttpPostIn" />
+      <wsdl:output message="tns:GetTestDriveProgramsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoSessionPrograms">
+      <wsdl:input message="tns:GetInfoSessionProgramsHttpPostIn" />
+      <wsdl:output message="tns:GetInfoSessionProgramsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgramForPreviousYear">
+      <wsdl:input message="tns:GetCampusesForProgramForPreviousYearHttpPostIn" />
+      <wsdl:output message="tns:GetCampusesForProgramForPreviousYearHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgram">
+      <wsdl:input message="tns:GetCampusesForProgramHttpPostIn" />
+      <wsdl:output message="tns:GetCampusesForProgramHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramByIdForPreviousYear">
+      <wsdl:input message="tns:GetProgramByIdForPreviousYearHttpPostIn" />
+      <wsdl:output message="tns:GetProgramByIdForPreviousYearHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramById">
+      <wsdl:input message="tns:GetProgramByIdHttpPostIn" />
+      <wsdl:output message="tns:GetProgramByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgramInformationSessionProgram">
+      <wsdl:input message="tns:GetCampusesForProgramInformationSessionProgramHttpPostIn" />
+      <wsdl:output message="tns:GetCampusesForProgramInformationSessionProgramHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForTestDriveProgram">
+      <wsdl:input message="tns:GetCampusesForTestDriveProgramHttpPostIn" />
+      <wsdl:output message="tns:GetCampusesForTestDriveProgramHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramInformationSessionProgramById">
+      <wsdl:input message="tns:GetProgramInformationSessionProgramByIdHttpPostIn" />
+      <wsdl:output message="tns:GetProgramInformationSessionProgramByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDriveProgramById">
+      <wsdl:input message="tns:GetTestDriveProgramByIdHttpPostIn" />
+      <wsdl:output message="tns:GetTestDriveProgramByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDatesForLookup">
+      <wsdl:input message="tns:GetInformationDatesForLookupHttpPostIn" />
+      <wsdl:output message="tns:GetInformationDatesForLookupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDates">
+      <wsdl:input message="tns:GetInformationDatesHttpPostIn" />
+      <wsdl:output message="tns:GetInformationDatesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusMappings">
+      <wsdl:input message="tns:GetCampusMappingsHttpPostIn" />
+      <wsdl:output message="tns:GetCampusMappingsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDateById">
+      <wsdl:input message="tns:GetInformationDateByIdHttpPostIn" />
+      <wsdl:output message="tns:GetInformationDateByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitPageRating">
+      <wsdl:input message="tns:SubmitPageRatingHttpPostIn" />
+      <wsdl:output message="tns:SubmitPageRatingHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePageRating">
+      <wsdl:input message="tns:UpdatePageRatingHttpPostIn" />
+      <wsdl:output message="tns:UpdatePageRatingHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllResponseTypes">
+      <wsdl:input message="tns:GetAllResponseTypesHttpPostIn" />
+      <wsdl:output message="tns:GetAllResponseTypesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubjects">
+      <wsdl:input message="tns:GetAllSubjectsHttpPostIn" />
+      <wsdl:output message="tns:GetAllSubjectsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotoGallerySet">
+      <wsdl:input message="tns:GetPhotoGallerySetHttpPostIn" />
+      <wsdl:output message="tns:GetPhotoGallerySetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartSessions">
+      <wsdl:input message="tns:GetJumpStartSessionsHttpPostIn" />
+      <wsdl:output message="tns:GetJumpStartSessionsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartStudentByFormId">
+      <wsdl:input message="tns:GetJumpStartStudentByFormIdHttpPostIn" />
+      <wsdl:output message="tns:GetJumpStartStudentByFormIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartStudent">
+      <wsdl:input message="tns:GetJumpStartStudentHttpPostIn" />
+      <wsdl:output message="tns:GetJumpStartStudentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPrograms">
+      <wsdl:input message="tns:GetAllProgramsHttpPostIn" />
+      <wsdl:output message="tns:GetAllProgramsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherSessions">
+      <wsdl:input message="tns:GetSummerRefresherSessionsHttpPostIn" />
+      <wsdl:output message="tns:GetSummerRefresherSessionsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherSessionById">
+      <wsdl:input message="tns:GetSummerRefresherSessionByIdHttpPostIn" />
+      <wsdl:output message="tns:GetSummerRefresherSessionByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherStudent">
+      <wsdl:input message="tns:GetSummerRefresherStudentHttpPostIn" />
+      <wsdl:output message="tns:GetSummerRefresherStudentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusInformation">
+      <wsdl:input message="tns:GetAllCampusInformationHttpPostIn" />
+      <wsdl:output message="tns:GetAllCampusInformationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusInformation">
+      <wsdl:input message="tns:GetCampusInformationHttpPostIn" />
+      <wsdl:output message="tns:GetCampusInformationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToursForCampus">
+      <wsdl:input message="tns:GetToursForCampusHttpPostIn" />
+      <wsdl:output message="tns:GetToursForCampusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCareerExplorationSessionDates">
+      <wsdl:input message="tns:GetCareerExplorationSessionDatesHttpPostIn" />
+      <wsdl:output message="tns:GetCareerExplorationSessionDatesHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NsccServiceSoap" type="tns:NsccServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllCampusesForPreviousYear">
+      <soap:operation soapAction="http://tempuri.org/GetAllCampusesForPreviousYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusesForBogStaffNomination">
+      <soap:operation soapAction="http://tempuri.org/GetAllCampusesForBogStaffNomination" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampuses">
+      <soap:operation soapAction="http://tempuri.org/GetAllCampuses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusesForProgramInformationSessions">
+      <soap:operation soapAction="http://tempuri.org/GetAllCampusesForProgramInformationSessions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusById">
+      <soap:operation soapAction="http://tempuri.org/GetCampusById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDriveProgramsByCampuses">
+      <soap:operation soapAction="http://tempuri.org/GetTestDriveProgramsByCampuses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramsForPreviousYear">
+      <soap:operation soapAction="http://tempuri.org/GetProgramsForPreviousYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramInformationSessionPrograms">
+      <soap:operation soapAction="http://tempuri.org/GetProgramInformationSessionPrograms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDrivePrograms">
+      <soap:operation soapAction="http://tempuri.org/GetTestDrivePrograms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoSessionPrograms">
+      <soap:operation soapAction="http://tempuri.org/GetInfoSessionPrograms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgramForPreviousYear">
+      <soap:operation soapAction="http://tempuri.org/GetCampusesForProgramForPreviousYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgram">
+      <soap:operation soapAction="http://tempuri.org/GetCampusesForProgram" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramByIdForPreviousYear">
+      <soap:operation soapAction="http://tempuri.org/GetProgramByIdForPreviousYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramById">
+      <soap:operation soapAction="http://tempuri.org/GetProgramById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgramInformationSessionProgram">
+      <soap:operation soapAction="http://tempuri.org/GetCampusesForProgramInformationSessionProgram" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForTestDriveProgram">
+      <soap:operation soapAction="http://tempuri.org/GetCampusesForTestDriveProgram" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramInformationSessionProgramById">
+      <soap:operation soapAction="http://tempuri.org/GetProgramInformationSessionProgramById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDriveProgramById">
+      <soap:operation soapAction="http://tempuri.org/GetTestDriveProgramById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDatesForLookup">
+      <soap:operation soapAction="http://tempuri.org/GetInformationDatesForLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDates">
+      <soap:operation soapAction="http://tempuri.org/GetInformationDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusMappings">
+      <soap:operation soapAction="http://tempuri.org/GetCampusMappings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDateById">
+      <soap:operation soapAction="http://tempuri.org/GetInformationDateById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitPageRating">
+      <soap:operation soapAction="http://tempuri.org/SubmitPageRating" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePageRating">
+      <soap:operation soapAction="http://tempuri.org/UpdatePageRating" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllResponseTypes">
+      <soap:operation soapAction="http://tempuri.org/GetAllResponseTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubjects">
+      <soap:operation soapAction="http://tempuri.org/GetAllSubjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotoGallerySet">
+      <soap:operation soapAction="http://tempuri.org/GetPhotoGallerySet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartSessions">
+      <soap:operation soapAction="http://tempuri.org/GetJumpStartSessions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartStudentByFormId">
+      <soap:operation soapAction="http://tempuri.org/GetJumpStartStudentByFormId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartStudent">
+      <soap:operation soapAction="http://tempuri.org/GetJumpStartStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPrograms">
+      <soap:operation soapAction="http://tempuri.org/GetAllPrograms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherSessions">
+      <soap:operation soapAction="http://tempuri.org/GetSummerRefresherSessions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherSessionById">
+      <soap:operation soapAction="http://tempuri.org/GetSummerRefresherSessionById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherStudent">
+      <soap:operation soapAction="http://tempuri.org/GetSummerRefresherStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusInformation">
+      <soap:operation soapAction="http://tempuri.org/GetAllCampusInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusInformation">
+      <soap:operation soapAction="http://tempuri.org/GetCampusInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToursForCampus">
+      <soap:operation soapAction="http://tempuri.org/GetToursForCampus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCareerExplorationSessionDates">
+      <soap:operation soapAction="http://tempuri.org/GetCareerExplorationSessionDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NsccServiceSoap12" type="tns:NsccServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllCampusesForPreviousYear">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCampusesForPreviousYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusesForBogStaffNomination">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCampusesForBogStaffNomination" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampuses">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCampuses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusesForProgramInformationSessions">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCampusesForProgramInformationSessions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusById">
+      <soap12:operation soapAction="http://tempuri.org/GetCampusById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDriveProgramsByCampuses">
+      <soap12:operation soapAction="http://tempuri.org/GetTestDriveProgramsByCampuses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramsForPreviousYear">
+      <soap12:operation soapAction="http://tempuri.org/GetProgramsForPreviousYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramInformationSessionPrograms">
+      <soap12:operation soapAction="http://tempuri.org/GetProgramInformationSessionPrograms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDrivePrograms">
+      <soap12:operation soapAction="http://tempuri.org/GetTestDrivePrograms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoSessionPrograms">
+      <soap12:operation soapAction="http://tempuri.org/GetInfoSessionPrograms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgramForPreviousYear">
+      <soap12:operation soapAction="http://tempuri.org/GetCampusesForProgramForPreviousYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgram">
+      <soap12:operation soapAction="http://tempuri.org/GetCampusesForProgram" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramByIdForPreviousYear">
+      <soap12:operation soapAction="http://tempuri.org/GetProgramByIdForPreviousYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramById">
+      <soap12:operation soapAction="http://tempuri.org/GetProgramById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgramInformationSessionProgram">
+      <soap12:operation soapAction="http://tempuri.org/GetCampusesForProgramInformationSessionProgram" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForTestDriveProgram">
+      <soap12:operation soapAction="http://tempuri.org/GetCampusesForTestDriveProgram" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramInformationSessionProgramById">
+      <soap12:operation soapAction="http://tempuri.org/GetProgramInformationSessionProgramById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDriveProgramById">
+      <soap12:operation soapAction="http://tempuri.org/GetTestDriveProgramById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDatesForLookup">
+      <soap12:operation soapAction="http://tempuri.org/GetInformationDatesForLookup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDates">
+      <soap12:operation soapAction="http://tempuri.org/GetInformationDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusMappings">
+      <soap12:operation soapAction="http://tempuri.org/GetCampusMappings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDateById">
+      <soap12:operation soapAction="http://tempuri.org/GetInformationDateById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitPageRating">
+      <soap12:operation soapAction="http://tempuri.org/SubmitPageRating" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePageRating">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePageRating" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllResponseTypes">
+      <soap12:operation soapAction="http://tempuri.org/GetAllResponseTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubjects">
+      <soap12:operation soapAction="http://tempuri.org/GetAllSubjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotoGallerySet">
+      <soap12:operation soapAction="http://tempuri.org/GetPhotoGallerySet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartSessions">
+      <soap12:operation soapAction="http://tempuri.org/GetJumpStartSessions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartStudentByFormId">
+      <soap12:operation soapAction="http://tempuri.org/GetJumpStartStudentByFormId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartStudent">
+      <soap12:operation soapAction="http://tempuri.org/GetJumpStartStudent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPrograms">
+      <soap12:operation soapAction="http://tempuri.org/GetAllPrograms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherSessions">
+      <soap12:operation soapAction="http://tempuri.org/GetSummerRefresherSessions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherSessionById">
+      <soap12:operation soapAction="http://tempuri.org/GetSummerRefresherSessionById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherStudent">
+      <soap12:operation soapAction="http://tempuri.org/GetSummerRefresherStudent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusInformation">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCampusInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusInformation">
+      <soap12:operation soapAction="http://tempuri.org/GetCampusInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToursForCampus">
+      <soap12:operation soapAction="http://tempuri.org/GetToursForCampus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCareerExplorationSessionDates">
+      <soap12:operation soapAction="http://tempuri.org/GetCareerExplorationSessionDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NsccServiceHttpGet" type="tns:NsccServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetAllCampusesForPreviousYear">
+      <http:operation location="/GetAllCampusesForPreviousYear" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusesForBogStaffNomination">
+      <http:operation location="/GetAllCampusesForBogStaffNomination" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampuses">
+      <http:operation location="/GetAllCampuses" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusesForProgramInformationSessions">
+      <http:operation location="/GetAllCampusesForProgramInformationSessions" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusById">
+      <http:operation location="/GetCampusById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDriveProgramsByCampuses">
+      <http:operation location="/GetTestDriveProgramsByCampuses" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramsForPreviousYear">
+      <http:operation location="/GetProgramsForPreviousYear" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramInformationSessionPrograms">
+      <http:operation location="/GetProgramInformationSessionPrograms" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDrivePrograms">
+      <http:operation location="/GetTestDrivePrograms" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoSessionPrograms">
+      <http:operation location="/GetInfoSessionPrograms" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgramForPreviousYear">
+      <http:operation location="/GetCampusesForProgramForPreviousYear" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgram">
+      <http:operation location="/GetCampusesForProgram" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramByIdForPreviousYear">
+      <http:operation location="/GetProgramByIdForPreviousYear" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramById">
+      <http:operation location="/GetProgramById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgramInformationSessionProgram">
+      <http:operation location="/GetCampusesForProgramInformationSessionProgram" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForTestDriveProgram">
+      <http:operation location="/GetCampusesForTestDriveProgram" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramInformationSessionProgramById">
+      <http:operation location="/GetProgramInformationSessionProgramById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDriveProgramById">
+      <http:operation location="/GetTestDriveProgramById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDatesForLookup">
+      <http:operation location="/GetInformationDatesForLookup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDates">
+      <http:operation location="/GetInformationDates" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusMappings">
+      <http:operation location="/GetCampusMappings" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDateById">
+      <http:operation location="/GetInformationDateById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitPageRating">
+      <http:operation location="/SubmitPageRating" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePageRating">
+      <http:operation location="/UpdatePageRating" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllResponseTypes">
+      <http:operation location="/GetAllResponseTypes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubjects">
+      <http:operation location="/GetAllSubjects" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotoGallerySet">
+      <http:operation location="/GetPhotoGallerySet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartSessions">
+      <http:operation location="/GetJumpStartSessions" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartStudentByFormId">
+      <http:operation location="/GetJumpStartStudentByFormId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartStudent">
+      <http:operation location="/GetJumpStartStudent" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPrograms">
+      <http:operation location="/GetAllPrograms" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherSessions">
+      <http:operation location="/GetSummerRefresherSessions" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherSessionById">
+      <http:operation location="/GetSummerRefresherSessionById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherStudent">
+      <http:operation location="/GetSummerRefresherStudent" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusInformation">
+      <http:operation location="/GetAllCampusInformation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusInformation">
+      <http:operation location="/GetCampusInformation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToursForCampus">
+      <http:operation location="/GetToursForCampus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCareerExplorationSessionDates">
+      <http:operation location="/GetCareerExplorationSessionDates" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NsccServiceHttpPost" type="tns:NsccServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetAllCampusesForPreviousYear">
+      <http:operation location="/GetAllCampusesForPreviousYear" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusesForBogStaffNomination">
+      <http:operation location="/GetAllCampusesForBogStaffNomination" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampuses">
+      <http:operation location="/GetAllCampuses" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusesForProgramInformationSessions">
+      <http:operation location="/GetAllCampusesForProgramInformationSessions" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusById">
+      <http:operation location="/GetCampusById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDriveProgramsByCampuses">
+      <http:operation location="/GetTestDriveProgramsByCampuses" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramsForPreviousYear">
+      <http:operation location="/GetProgramsForPreviousYear" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramInformationSessionPrograms">
+      <http:operation location="/GetProgramInformationSessionPrograms" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDrivePrograms">
+      <http:operation location="/GetTestDrivePrograms" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoSessionPrograms">
+      <http:operation location="/GetInfoSessionPrograms" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgramForPreviousYear">
+      <http:operation location="/GetCampusesForProgramForPreviousYear" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgram">
+      <http:operation location="/GetCampusesForProgram" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramByIdForPreviousYear">
+      <http:operation location="/GetProgramByIdForPreviousYear" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramById">
+      <http:operation location="/GetProgramById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForProgramInformationSessionProgram">
+      <http:operation location="/GetCampusesForProgramInformationSessionProgram" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusesForTestDriveProgram">
+      <http:operation location="/GetCampusesForTestDriveProgram" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramInformationSessionProgramById">
+      <http:operation location="/GetProgramInformationSessionProgramById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestDriveProgramById">
+      <http:operation location="/GetTestDriveProgramById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDatesForLookup">
+      <http:operation location="/GetInformationDatesForLookup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDates">
+      <http:operation location="/GetInformationDates" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusMappings">
+      <http:operation location="/GetCampusMappings" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationDateById">
+      <http:operation location="/GetInformationDateById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitPageRating">
+      <http:operation location="/SubmitPageRating" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePageRating">
+      <http:operation location="/UpdatePageRating" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllResponseTypes">
+      <http:operation location="/GetAllResponseTypes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubjects">
+      <http:operation location="/GetAllSubjects" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotoGallerySet">
+      <http:operation location="/GetPhotoGallerySet" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartSessions">
+      <http:operation location="/GetJumpStartSessions" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartStudentByFormId">
+      <http:operation location="/GetJumpStartStudentByFormId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJumpStartStudent">
+      <http:operation location="/GetJumpStartStudent" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPrograms">
+      <http:operation location="/GetAllPrograms" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherSessions">
+      <http:operation location="/GetSummerRefresherSessions" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherSessionById">
+      <http:operation location="/GetSummerRefresherSessionById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummerRefresherStudent">
+      <http:operation location="/GetSummerRefresherStudent" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCampusInformation">
+      <http:operation location="/GetAllCampusInformation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampusInformation">
+      <http:operation location="/GetCampusInformation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToursForCampus">
+      <http:operation location="/GetToursForCampus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCareerExplorationSessionDates">
+      <http:operation location="/GetCareerExplorationSessionDates" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NsccService">
+    <wsdl:port name="NsccServiceSoap" binding="tns:NsccServiceSoap">
+      <soap:address location="http://www.nscc.ca/WebService/NsccService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NsccServiceSoap12" binding="tns:NsccServiceSoap12">
+      <soap12:address location="http://www.nscc.ca/WebService/NsccService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NsccServiceHttpGet" binding="tns:NsccServiceHttpGet">
+      <http:address location="http://www.nscc.ca/WebService/NsccService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NsccServiceHttpPost" binding="tns:NsccServiceHttpPost">
+      <http:address location="http://www.nscc.ca/WebService/NsccService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,551 @@
+
+
+.hidden { display:none; }
+
+.allprograms { }
+
+.allprograms a:link, .allprograms a:active, .allprograms a:visited, .allprograms a:hover { font-size: 12px; color: #1F61AF; text-decoration: none; }
+
+.matching { font-weight: bold; text-decoration: underline; }    
+
+.Blue { background-color: #e6edf3; }
+
+.Red { color: #ff0000; font-weight: bold; }
+
+hr { color: #fff; height: 1px; border: 1px solid #fff; }
+
+#tblAllPrograms, #tblCampusPrograms { border: 1px solid #bebebe; }
+
+#tblAllPrograms td, #tblCampusPrograms td { padding-left: 15px; border-bottom: 1px solid #d3e0e9; }        
+
+.btnDialog { margin-top: 10px; }
+
+
+#basket {
+    bottom: 0px;
+    position: fixed;
+    right: 10px;
+    z-index: 999999;
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+#basket h3 {
+    color: #ffffff;
+    border-radius: 2px 0 0 0;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0 0 0.5em !important;
+    text-align: left;
+}
+
+#basketcontents {
+    background: none repeat scroll 0 0 #464646;
+    color: #FFFFFF;
+    margin-top: 27px;
+    padding: 15px;
+    width: 200px;    
+}
+
+#btn-submit-awards {
+    color: #ffffff;
+    margin: 0 0 1em;
+    text-align: center;
+}
+
+#btn-submit-awards input[type="submit"] {
+    color: #ffffff;
+    background-color: #333333;
+    border: 1px solid #282828;
+}
+
+
+/* From Luuk */
+
+#your_application_list{
+
+    z-index: 999999;
+
+    background-color: white;
+
+	width: 274px;
+	font-family: Arial,sans-serif;
+	float: right;
+	font-size: 12px;
+}
+
+#your_application_list .sn-arrw{
+	float: left;
+	position: relative;
+	width: 17px;
+	height: 9px;
+	background: url(../../img/designelements/img-sidenav-arrw-gray.png);
+	bottom: 6px;
+	left: 20px;
+	z-index: 10;
+}
+
+#selectedAwards .sn-arrw{
+	float: left;
+	position: relative;
+	width: 17px;
+	height: 9px;
+	background: url(../../img/designelements/img-sidenav-arrw-gray.png);
+	bottom: 6px;
+	left: 20px;
+	z-index: 10;
+}
+#your_application_list .headline {
+	padding: 11px 6px 15px 25px;
+	text-decoration: none;
+	display: block;
+	color: #FFF;
+	background: #303844;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#selectedAwards .headline {
+	padding: 11px 6px 15px 25px;
+	text-decoration: none;
+	display: block;
+	color: #FFF;
+	background: #303844;
+	font-size: 16px;
+	font-weight: bold;
+}
+#your_application_list .headline .number_of_applications, #selectedAwards .headline .number_of_applications{
+	padding: 5px 4px 3px 4px;
+	background-color: #596069;
+	float: right;
+	min-width:22px;
+	text-align: center;
+	margin-top: -5px;
+}
+
+#your_application_list ul, #selectedAwards ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+    width: 100%;
+    float: left;
+}
+
+#your_application_list .list_container{
+	max-height: 300px;
+	overflow-y: auto;
+	float: left;
+    width: 100%;
+    margin-top: -15px;
+}
+
+#selectedAwards .list_container{
+	float: left;
+	margin-top: -15px;
+    width: 100%;
+}
+
+/*#your_application_list .list_container::-webkit-scrollbar {
+    width: 6px;
+}
+ 
+#your_application_list .list_container::-webkit-scrollbar-track {
+    cursor: pointer;
+    border-radius: 3px;
+}
+ 
+#your_application_list .list_container::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: #ccc;
+}*/
+
+
+
+#your_application_list ul li, #selectedAwards ul li{
+	padding: 10px 0px 10px 5px;
+	/*background-color: #e3e3e3;*/
+	border-top: 2px #fff solid;
+	list-style: none;
+	margin: 0;
+}
+
+#your_application_list ul li .btn-remove, #selectedAwards ul li .btn-remove{
+	background: url(../../img/designelements/icn-removeAward.png);
+	background-repeat: no-repeat;
+	background-position: top right;
+	height: 20px;
+	width: 20px;
+	float: right;
+	opacity: 0.5;
+}
+
+#your_application_list ul li .btn-remove:hover, #selectedAwards ul li .btn-remove:hover{
+	opacity: 1;
+}
+
+#your_application_list .btn-apply-lrg{
+	background-image: url(../../img/designelements/btn-apply-lrg.png);
+	width: 274px;
+	height: 34px;
+	float: left;
+	margin-top: 15px;
+}
+
+#your_application_list .btn-apply-lrg:hover{
+	background-position: 0 -34px;
+}
+
+#your_application_list .terms{
+	float: left;
+	width: 100%;
+	text-align: center;
+}
+
+#your_application_list input{
+	margin-right: 5px;
+}
+
+#selectedAwards{
+	width: 274px;
+	float: right;
+}
+
+.fixed{
+	position: fixed;
+	top: 30px;
+	margin-left: 553px;
+	-webkit-transition: top 0.3s ease-in-out;
+	-moz-transition: top 0.3s ease-in-out;
+	-ms-transition: top 0.3s ease-in-out;
+	-o-transition: top 0.3s ease-in-out;
+	transition: top 0.3s ease-in-out;
+}
+
+.btn-submission-lrg{
+	background-image: url(../../img/designelements/btn-submit-application.png);
+	width: 274px;
+	height: 34px;
+	float: left;
+	margin-top: 15px;
+	margin-left: 60px;
+}
+
+.btn-submission-lrg:hover{
+	background-position: 0 -34px;
+}
+
+#Body_lbCancel{
+	margin-top: 20px;
+	margin-left: 50px;
+	float: left;
+}
+#tblAwards{
+	width: 480px;
+	float: left;
+	border-bottom: 1px #ebebeb solid;
+	margin-bottom: 10px;
+}
+#tblAwards tr{
+	height: 40px;
+	border-top: 1px #ebebeb solid;
+}
+#tblAwards tr td img{
+	margin-right: 5px;
+	margin-top: 5px;
+}
+#tblAwards tr td{
+	padding-top: 7px;
+}
+
+
+/* =================================== */
+/* style.min.css overrides */
+/* =================================== */
+#content {
+    margin: 0 20px -3px 20px !important;
+    width: inherit !important; 
+}
+
+/* =================================== */
+/* forms.css overrides */
+/* =================================== */
+
+#frmBlue input[type='checkbox']
+{
+    Border:0 !important;
+}
+
+
+
+
+
+/* =================================== */
+/* 9/20/2013 */
+/* =================================== */
+
+
+.bgBorders_awards{
+	background: none !important;
+	background-image: url(../../img/designelements/bg-pageBorder.png) !important;
+	background-position: center center !important;
+	background-repeat: repeat-y !important;
+	background-color: #ccc !important;
+	background-size: 911px !important;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+.header_full{
+	width: 871px;
+	background-color: #333;
+	height: 22px;
+	background-image: url(../../img/designelements/header_bg.jpg);
+	padding: 31px 0;
+	margin: auto;
+}
+
+.header_full_gray{
+	height: 63px;
+	background-color: #cccccc;
+	width: 100%;
+	margin-top:-20px;
+	background-image: url(../../img/designelements/bg-pageBorderTop.png);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+}
+
+.header_full_gray .infotab{
+	width: 235px;
+	height: 30px;
+	-webkit-border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px;
+	background-color: #fff;
+	text-align: center;
+	font-weight: bold;
+	padding-top: 15px;
+	color: #000;
+	text-decoration: none;
+}
+
+.header_full_gray .infotab:hover{
+	background-color: #303844;
+	color: #fff;
+}
+
+.header_full #globalContainer, .header_full_gray #globalContainer{
+	width: 827px !important;
+	padding-left: 24px;
+	padding-right: 20px;
+}
+
+.header_full h1{
+	color: #fff;
+	font-size: 30px;
+	margin-left: 20px;
+}
+
+.header_full .logo{
+	padding-right: 20px;
+	border-right: 2px solid #fff;
+}
+
+.header_full .instructions{
+	padding-left: 35px;
+	padding-top: 5px;
+	height: 22px;
+	background-image: url(../../img/designelements/instructions.png);
+	background-position: left;
+	background-repeat: no-repeat;
+	font-size: 14px;
+	color: #fff;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.header_full .questions{
+	padding-left: 35px;
+	padding-top: 5px;
+	height: 22px;
+	background-image: url(../../img/designelements/questions.png);
+	background-position: left;
+	background-repeat: no-repeat;
+	font-size: 14px;
+	color: #fff;
+	text-decoration: underline;
+	margin-left: 20px;
+	cursor: pointer;
+}
+
+.awards_application{
+	width: 827px !important;
+	padding-left: 24px;
+	padding-right: 20px;
+	overflow: hidden;
+}
+
+
+.awards_application #cookietrail{
+	margin-bottom: 20px;
+	margin-top: 20px;
+	margin-left: 0px;
+	width: 100%;
+	font-size: 18px;
+}
+
+.awards_application h2{
+	font-size: 21px;
+	margin-bottom: 15px;
+}
+
+.awards_application p{
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.awards_application .left-col{
+	width: 480px;
+}
+
+.awards_application .right-col{
+	width: 260px;
+	border: 2px solid #CCC;
+	padding: 10px;
+	background-color: #fff;
+}
+
+.awards_application .award_list li{
+	padding: 10px 0 10px 0px;
+	/* 
+    padding: 10px 0 10px 28px;
+    background-image: url(../../img/designelements/icn-addAward.png);
+	background-position: left;
+	background-repeat: no-repeat;*/
+	border-top: 1px solid #ebebeb;
+	border-bottom: 1px solid #ebebeb;
+	color: #1d4d89;
+	cursor: pointer;
+}
+
+.awards_application .basket_header{
+	background-color: #fd621f;
+	padding: 10px;
+	font-weight: bold;
+	color: #fff;
+	margin-bottom: 15px;
+	font-size: 16px;
+}
+
+.awards_application .basket_empty{
+	color: #000;
+
+}
+
+.btn-remove2 {
+    padding: 10px 28px 10px 0px;
+	background-image: url(../../img/designelements/icn-removeAward.png);
+	background-position: right;
+	background-repeat: no-repeat;    
+	float: right;
+	margin-right: 5px;
+	opacity: 0.5;
+}
+
+.btn-remove2:hover {
+    opacity: 1;
+}
+
+
+
+.awards_application .basket_list li{
+	padding: 10px 0px 10px 0px;
+    /*
+	background-image: url(../../img/designelements/icn-removeAward.png);
+	background-position: right;
+	background-repeat: no-repeat;
+    */
+	border-top: 1px solid #ebebeb;
+	border-bottom: 1px solid #ebebeb;
+	color: #000;
+	font-size: 13px;
+	line-height: 17px;
+	width: 95%;
+}
+
+.awards_application .basket_list li:last-of-type{
+	border-bottom: none;
+}
+
+.awards_application .basket_list li img{
+	float: right;
+	opacity: 0.5;
+}
+
+.awards_application .basket_list li img:hover{
+	opacity: 1;
+}
+
+.apply-btn{
+	width: 100%;
+	height: 31px;
+	background-image: url(../../img/designelements/btn-apply.png);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	display: block;
+	cursor: pointer;
+	float: left;
+	padding-top: 10px;
+	border-top: 1px solid #ebebeb;
+}
+
+.footer_full{
+	width: 871px;
+	background-color: #333;
+	height: 38px;
+	background-image: url(../../img/designelements/header_bg.jpg);
+	margin: auto;
+	padding-top: 15px;
+}
+
+.footer_full a{
+	color: #85bbea !important;
+}
+
+.awardTitle{
+	line-height: 20px;
+}
+
+.application_checklist{
+	list-style: disc;
+	padding-left: 20px;
+	margin-bottom: 40px;
+	line-height: 18px;
+}
+
+.application_checklist li{
+	padding-bottom: 20px;
+	padding-left: 10px;
+}
+
+.awards_application table{
+	width:480px !important;
+	font-size: 13px;
+	margin-top: 0;
+}
+.awards_application table textarea{
+	width:325px !important;
+}
+
+#divCannotProceed{
+	margin-bottom: 20px;
+}

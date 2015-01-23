@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PrintFriendly.master.cs" Inherits="NSCC.Web.AwardsApplication.MasterPages.PrintFriendly" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />    
+    
+    <title>Nova Scotia Community College - Page Title</title>
+    
+    <!-- #include virtual="/inc/meta.html" -->
+    <!-- #include virtual="/inc/css.html" -->
+    
+
+    <asp:ContentPlaceHolder ID="HeadTag" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+	<asp:ContentPlaceHolder ID="GlobalContainer" runat="server">
+	            
+	</asp:ContentPlaceHolder>		
+
+	<div id="pageContainer">
+
+        <asp:ContentPlaceHolder id="Body" runat="server"></asp:ContentPlaceHolder>
+
+    </div>        
+
+        
+        <asp:ContentPlaceHolder ID="HiddenElements" runat="server"></asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
